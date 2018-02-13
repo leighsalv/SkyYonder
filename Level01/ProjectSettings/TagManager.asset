@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CollectCube
+  - OnFloor
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{508F22A5-F4BD-758C-0F05-825CA64E9974}</ProjectGuid>
+    <ProjectGuid>{D925C8B4-0A40-D0BD-D8A7-8CFDFAF8205B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\CubeController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RotateSky.cs" />
+     <Compile Include="Assets\Scripts\SlideController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
