@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour 
 {
@@ -13,11 +14,12 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 	private Rigidbody rb;
 
-	public Text scoreText;
+	public TextMeshProUGUI scoreText;
 	private int score;
 
 	void Start()
 	{
+		//scoreText = GetComponent<TextMeshPro> ();
 		rb = GetComponent<Rigidbody> (); //necessary for the circle to move around
 		jump = new Vector3(0.0f, 2.0f, 0.0f);
 
