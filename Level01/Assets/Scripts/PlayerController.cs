@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
 
 		moveVertical = Mathf.Clamp01 (moveVertical); //prevents player to go backward
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical); //y coordinate is 0 because circle isn't moving up
+		//moveVertical * 6 bc we want left/right mvmnt to move slower than forward mvmnt
+		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, (moveVertical*6)); //y coordinate is 0 because circle isn't moving up
 
 		rb.AddForce (movement*speed); //allows circle to move
 		//drag = slow circle's movement
