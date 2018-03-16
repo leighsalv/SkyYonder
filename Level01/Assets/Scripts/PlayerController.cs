@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerController : MonoBehaviour 
@@ -45,11 +46,18 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
-		{
-			rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+		// Checks if player is on the ground. If yes, they can jump
+		if (Input.GetKeyDown (KeyCode.Space) && isGrounded) {
+			rb.AddForce (jump * jumpForce, ForceMode.Impulse);
 			isGrounded = false;
+
+		} 
+
+		// Checks if player fell
+		else if (gameObject.transform.position.y <= -2) {
+			playerFell ();
 		}
+
 	}
 
 	void LateUpdate()
@@ -88,32 +96,9 @@ public class PlayerController : MonoBehaviour
 	{
 		scoreText.text = score.ToString ();
 	}
+
+	void playerFell() 
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);    
+	}
 }
-
-
-
-
-
-/* public Vector3 jump;
-         public float jumpForce = 2.0f;
-     
-         public bool isGrounded;
-         Rigidbody rb;
-         void Start(){
-             rb = GetComponent<Rigidbody>();
-             jump = new Vector3(0.0f, 2.0f, 0.0f);
-         }
-     
-         void OnCollisionStay()
-         {
-             isGrounded = true;
-         }
-     
-         void Update(){
-             if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
-     
-                 rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-                 isGrounded = false;
-             }
-         }
-     }*/
